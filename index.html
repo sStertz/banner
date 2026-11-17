@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redirecionando…</title>
+<!--
+  =====================================================
+  PARA TROCAR O DESTINO DO QR CODE:
+  edite só a linha DESTINO abaixo (entre as aspas)
+  e salve (Commit changes). Em ~1 minuto já vale.
+  Deixe vazio ("") para mostrar "Em breve".
+  =====================================================
+-->
+<script>
+  var DESTINO = "";
+  if (DESTINO) { window.location.replace(DESTINO); }
+</script>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#111;color:#eee;text-align:center;padding:24px}
+  a{color:#7cc4ff}
+</style>
+</head>
+<body>
+  <div id="msg"><p>Carregando…</p></div>
+  <script>
+    var m = document.getElementById("msg");
+    if (DESTINO) {
+      m.innerHTML = '<p>Abrindo o conteúdo…</p><p><a href="' + DESTINO + '">Toque aqui se não abrir automaticamente</a></p>';
+    } else {
+      m.innerHTML = '<h2>Em breve</h2><p>O conteúdo deste QR code será publicado em breve.</p>';
+    }
+  </script>
+</body>
+</html>
